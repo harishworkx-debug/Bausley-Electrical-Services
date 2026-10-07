@@ -1,12 +1,13 @@
 import { useParams, Navigate, Link } from 'react-router-dom';
-import { Phone, MapPin, ArrowRight, CheckCircle2, Navigation } from 'lucide-react';
+import { Phone, MapPin, ArrowRight, CheckCircle2, Navigation, AlertTriangle, HelpCircle } from 'lucide-react';
 import Seo from '@/components/Seo';
 import PageHero from '@/components/PageHero';
 import CtaBanner from '@/components/CtaBanner';
+import FaqAccordion from '@/components/FaqAccordion';
 import { business, images } from '@/data/business';
 import { serviceAreas, getAreaBySlug } from '@/data/serviceAreas';
 import { services, getServiceBySlug } from '@/data/services';
-import { breadcrumbSchema } from '@/data/structuredData';
+import { breadcrumbSchema, faqSchema } from '@/data/structuredData';
 
 export default function ServiceAreaDetailPage() {
   const { slug } = useParams<{ slug: string }>();
@@ -28,7 +29,7 @@ export default function ServiceAreaDetailPage() {
     breadcrumbSchema([
       { name: 'Home', url: '/' },
       { name: 'Service Areas', url: '/service-areas' },
-      { name: `${area.city}, ${area.stateAbbr}`, url: `/service-areas/${area.slug}` },
+      { name: `${area.city}, ${area.stateAbbr}`, url: `/${area.slug}` },
     ]),
     {
       '@context': 'https://schema.org',
@@ -52,8 +53,9 @@ export default function ServiceAreaDetailPage() {
         '@type': 'City',
         name: `${area.city}, ${area.stateAbbr}`,
       },
-      url: `${business.domain}/service-areas/${area.slug}`,
+      url: `${business.domain}/${area.slug}`,
     },
+    area.faqs && area.faqs.length > 0 ? faqSchema(area.faqs) : {},
   ];
 
   const otherAreas = serviceAreas.filter((a) => a.slug !== area.slug).slice(0, 6);
@@ -63,9 +65,9 @@ export default function ServiceAreaDetailPage() {
       <Seo
         title={area.metaTitle}
         description={area.metaDescription}
-        canonicalPath={`/service-areas/${area.slug}`}
+        canonicalPath={`/${area.slug}`}
         ogImage={images.residentialHome}
-        structuredData={structuredData}
+        structuredData={structuredData.filter(Boolean)}
       />
 
       <PageHero
@@ -106,11 +108,21 @@ export default function ServiceAreaDetailPage() {
 
               {/* Local context */}
               <h3 className="mt-8 font-display text-xl font-bold text-navy-900">
-                Serving {area.city} Homes
+                Serving {area.city} Homes & Neighborhoods
               </h3>
               <p className="mt-3 text-charcoal-600">
                 {area.localContext}
               </p>
+              {area.neighborhoods && area.neighborhoods.length > 0 && (
+                <ul className="mt-4 grid gap-2 sm:grid-cols-2">
+                  {area.neighborhoods.map((hood) => (
+                    <li key={hood} className="flex items-center gap-2 text-sm text-navy-800 bg-navy-50 px-3 py-2 rounded-md">
+                      <MapPin className="h-4 w-4 text-electric-500" />
+                      {hood}
+                    </li>
+                  ))}
+                </ul>
+              )}
 
               {/* Primary service focus */}
               <div className="mt-8 rounded-xl border border-electric-200 bg-electric-50 p-6">
@@ -122,7 +134,7 @@ export default function ServiceAreaDetailPage() {
                 </p>
                 {primaryService && (
                   <Link
-                    to={`/services/${primaryService.slug}`}
+                    to={`/${primaryService.slug}`}
                     className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-electric-700 hover:text-electric-600"
                   >
                     Learn About {primaryService.shortName}
@@ -130,10 +142,42 @@ export default function ServiceAreaDetailPage() {
                   </Link>
                 )}
               </div>
+              
+              {/* Common problems */}
+              {area.commonProblems && area.commonProblems.length > 0 && (
+                <>
+                  <h3 className="mt-10 font-display text-xl font-bold text-navy-900">
+                    Common Electrical Problems in {area.city}
+                  </h3>
+                  <p className="mt-2 text-charcoal-600">
+                    Many homeowners in this area encounter specific electrical issues due to the age of the housing stock and local weather patterns. We frequently resolve:
+                  </p>
+                  <ul className="mt-4 space-y-3">
+                    {area.commonProblems.map((problem) => (
+                      <li key={problem} className="flex items-start gap-3">
+                        <AlertTriangle className="mt-0.5 h-5 w-5 flex-shrink-0 text-warning-500" />
+                        <span className="text-charcoal-700">{problem}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              )}
+              
+              {/* Why choose us */}
+              {area.whyChooseUs && (
+                <>
+                  <h3 className="mt-10 font-display text-xl font-bold text-navy-900">
+                    Why Choose Us in {area.city}?
+                  </h3>
+                  <p className="mt-3 text-lg leading-relaxed text-charcoal-600 bg-navy-50 p-5 rounded-xl border-l-4 border-electric-500">
+                    {area.whyChooseUs}
+                  </p>
+                </>
+              )}
 
               {/* What we offer in this area */}
-              <h3 className="mt-8 font-display text-xl font-bold text-navy-900">
-                Electrical Services Available in {area.city}
+              <h3 className="mt-10 font-display text-xl font-bold text-navy-900">
+                Other Electrical Services Available in {area.city}
               </h3>
               <p className="mt-2 text-charcoal-600">
                 While our primary focus in {area.city} is {area.primaryService.title.toLowerCase()}, we also provide these additional electrical services to local homeowners:
@@ -141,35 +185,16 @@ export default function ServiceAreaDetailPage() {
               <div className="mt-4 grid gap-3 sm:grid-cols-2">
                 {services
                   .filter((s) => s.slug !== area.primaryService.slug)
-                  .slice(0, 6)
                   .map((service) => (
                     <Link
                       key={service.slug}
-                      to={`/services/${service.slug}`}
+                      to={`/${service.slug}`}
                       className="flex items-center justify-between rounded-lg border border-navy-100 bg-white p-4 transition-colors hover:border-electric-200 hover:bg-electric-50"
                     >
                       <span className="text-sm font-medium text-navy-800">{service.shortName}</span>
                       <ArrowRight className="h-4 w-4 text-electric-500" />
                     </Link>
                   ))}
-              </div>
-
-              {/* CTA */}
-              <div className="mt-10 rounded-xl bg-navy-900 p-6 sm:p-8">
-                <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
-                  <div>
-                    <h3 className="font-display text-lg font-bold text-white">
-                      {area.ctaLabel}
-                    </h3>
-                    <p className="mt-1 text-sm text-navy-200">
-                      Serving {area.city} and the surrounding area.
-                    </p>
-                  </div>
-                  <a href={`tel:${business.phoneRaw}`} className="btn btn-primary flex-shrink-0">
-                    <Phone className="h-5 w-5" />
-                    {business.phone}
-                  </a>
-                </div>
               </div>
             </div>
 
@@ -197,7 +222,7 @@ export default function ServiceAreaDetailPage() {
                   {otherAreas.map((a) => (
                     <li key={a.slug}>
                       <Link
-                        to={`/service-areas/${a.slug}`}
+                        to={`/${a.slug}`}
                         className="flex items-center justify-between rounded-lg px-3 py-2.5 text-sm font-medium text-navy-700 transition-colors hover:bg-navy-50 hover:text-electric-600"
                       >
                         {a.city}, {a.stateAbbr}
@@ -210,27 +235,35 @@ export default function ServiceAreaDetailPage() {
                   View All Areas →
                 </Link>
               </div>
-
-              {/* All services */}
-              <div className="card p-6">
-                <h3 className="font-display text-lg font-bold text-navy-900">All Services</h3>
-                <ul className="mt-4 flex flex-wrap gap-2">
-                  {services.map((service) => (
-                    <li key={service.slug}>
-                      <Link
-                        to={`/services/${service.slug}`}
-                        className="rounded-lg bg-navy-50 px-3 py-1.5 text-xs font-medium text-navy-700 transition-colors hover:bg-electric-50 hover:text-electric-700"
-                      >
-                        {service.shortName}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
             </aside>
           </div>
         </div>
       </section>
+
+      {/* FAQ section */}
+      {area.faqs && area.faqs.length > 0 && (
+        <section className="bg-navy-50 section">
+          <div className="container-x">
+            <div className="grid gap-12 lg:grid-cols-[1fr_2fr]">
+              <div>
+                <div className="inline-flex items-center gap-2 rounded-full bg-electric-50 px-4 py-2 text-sm font-semibold text-electric-700">
+                  <HelpCircle className="h-4 w-4" />
+                  {area.city} FAQs
+                </div>
+                <h2 className="mt-6 font-display text-2xl font-bold text-navy-900 sm:text-3xl">
+                  Frequently Asked Questions
+                </h2>
+                <p className="mt-4 text-charcoal-600">
+                  Answers to common electrical questions from homeowners in {area.city}.
+                </p>
+              </div>
+              <div>
+                <FaqAccordion faqs={area.faqs} />
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       <CtaBanner
         title={`Electrician in ${area.city}, ${area.stateAbbr}`}

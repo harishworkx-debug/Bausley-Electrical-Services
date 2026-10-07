@@ -150,7 +150,7 @@ export default function AboutPage() {
                 {services.slice(0, 5).map((service) => (
                   <li key={service.slug}>
                     <Link
-                      to={`/services/${service.slug}`}
+                      to={`/${service.slug}`}
                       className="flex items-center justify-between rounded-lg border border-navy-100 bg-white p-4 transition-colors hover:border-electric-200 hover:bg-electric-50"
                     >
                       <span className="flex items-center gap-3">

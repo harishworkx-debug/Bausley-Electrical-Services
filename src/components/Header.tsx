@@ -120,7 +120,7 @@ export default function Header() {
                       {services.map((service) => (
                         <Link
                           key={service.slug}
-                          to={`/services/${service.slug}`}
+                          to={`/${service.slug}`}
                           className="block px-4 py-2.5 text-sm text-charcoal-600 transition-colors hover:bg-navy-50 hover:text-electric-500"
                         >
                           {service.shortName}
@@ -161,7 +161,7 @@ export default function Header() {
                       {serviceAreas.map((area) => (
                         <Link
                           key={area.slug}
-                          to={`/service-areas/${area.slug}`}
+                          to={`/${area.slug}`}
                           className="block px-4 py-2.5 text-sm text-charcoal-600 transition-colors hover:bg-navy-50 hover:text-electric-500"
                         >
                           {area.city}, {area.stateAbbr}
@@ -232,7 +232,7 @@ export default function Header() {
                     {services.map((service) => (
                       <Link
                         key={service.slug}
-                        to={`/services/${service.slug}`}
+                        to={`/${service.slug}`}
                         className="block rounded-lg px-4 py-2.5 text-sm text-charcoal-600 hover:bg-navy-50"
                       >
                         {service.shortName}
@@ -260,7 +260,7 @@ export default function Header() {
                     {serviceAreas.map((area) => (
                       <Link
                         key={area.slug}
-                        to={`/service-areas/${area.slug}`}
+                        to={`/${area.slug}`}
                         className="block rounded-lg px-4 py-2.5 text-sm text-charcoal-600 hover:bg-navy-50"
                       >
                         {area.city}, {area.stateAbbr}

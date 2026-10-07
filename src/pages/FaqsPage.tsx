@@ -125,7 +125,7 @@ export default function FaqsPage() {
                   {services.map((service) => (
                     <li key={service.slug}>
                       <Link
-                        to={`/services/${service.slug}`}
+                        to={`/${service.slug}`}
                         className="flex items-center justify-between rounded-lg px-3 py-2 text-sm font-medium text-navy-700 transition-colors hover:bg-navy-50 hover:text-electric-600"
                       >
                         {service.shortName}

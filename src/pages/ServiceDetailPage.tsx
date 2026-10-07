@@ -32,11 +32,11 @@ export default function ServiceDetailPage() {
     .filter((s): s is NonNullable<typeof s> => s !== undefined);
 
   const structuredData = [
-    serviceSchema({ name: service.title, description: service.metaDescription, url: `/services/${service.slug}` }),
+    serviceSchema({ name: service.title, description: service.metaDescription, url: `/${service.slug}` }),
     breadcrumbSchema([
       { name: 'Home', url: '/' },
       { name: 'Services', url: '/services' },
-      { name: service.shortName, url: `/services/${service.slug}` },
+      { name: service.shortName, url: `/${service.slug}` },
     ]),
     faqSchema(service.faqs),
   ];
@@ -46,7 +46,7 @@ export default function ServiceDetailPage() {
       <Seo
         title={service.metaTitle}
         description={service.metaDescription}
-        canonicalPath={`/services/${service.slug}`}
+        canonicalPath={`/${service.slug}`}
         ogImage={service.heroImage}
         structuredData={structuredData}
       />
@@ -169,7 +169,7 @@ export default function ServiceDetailPage() {
                   {service.relatedServices.map((related) => (
                     <li key={related.slug}>
                       <Link
-                        to={`/services/${related.slug}`}
+                        to={`/${related.slug}`}
                         className="flex items-center justify-between rounded-lg px-3 py-2.5 text-sm font-medium text-navy-700 transition-colors hover:bg-navy-50 hover:text-electric-600"
                       >
                         {related.label}
@@ -180,29 +180,51 @@ export default function ServiceDetailPage() {
                 </ul>
               </div>
 
-              {/* Service areas */}
+              {/* Service areas - Full list for SEO */}
               <div className="card p-6">
                 <h3 className="font-display text-lg font-bold text-navy-900">Service Areas</h3>
                 <p className="mt-2 text-sm text-charcoal-600">
-                  We serve Valley, AL and surrounding communities.
+                  We provide {service.shortName} across these communities:
                 </p>
                 <ul className="mt-4 flex flex-wrap gap-2">
-                  {serviceAreas.slice(0, 6).map((area) => (
+                  {serviceAreas.map((area) => (
                     <li key={area.slug}>
                       <Link
-                        to={`/service-areas/${area.slug}`}
+                        to={`/${area.slug}`}
                         className="rounded-lg bg-navy-50 px-3 py-1.5 text-xs font-medium text-navy-700 transition-colors hover:bg-electric-50 hover:text-electric-700"
+                        title={`${service.shortName} in ${area.city}, ${area.stateAbbr}`}
                       >
                         {area.city}, {area.stateAbbr}
                       </Link>
                     </li>
                   ))}
                 </ul>
-                <Link to="/service-areas" className="mt-4 inline-block text-sm font-semibold text-electric-600 hover:text-electric-500">
-                  View All Areas →
-                </Link>
               </div>
             </aside>
+          </div>
+        </div>
+      </section>
+
+      {/* Internal Linking / Areas Served block for SEO */}
+      <section className="bg-white section border-t border-navy-50">
+        <div className="container-x text-center">
+          <h2 className="font-display text-2xl font-bold text-navy-900">
+            Providing {service.title} Across East Alabama & West Georgia
+          </h2>
+          <p className="mx-auto mt-4 max-w-3xl text-charcoal-600">
+            At Bausley Electrical Services, we are proud to offer our comprehensive {service.title.toLowerCase()} to homeowners and businesses throughout the region. Click on any of the locations below to learn more about our specific localized services in your city.
+          </p>
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
+            {serviceAreas.map((area) => (
+              <Link
+                key={`footer-${area.slug}`}
+                to={`/${area.slug}`}
+                className="group flex items-center gap-2 rounded-full border border-navy-100 bg-navy-50 px-5 py-2.5 text-sm font-semibold text-navy-800 transition-colors hover:border-electric-500 hover:bg-electric-50"
+              >
+                <MapPin className="h-4 w-4 text-electric-500 transition-transform group-hover:scale-110" />
+                {service.shortName} in {area.city}
+              </Link>
+            ))}
           </div>
         </div>
       </section>

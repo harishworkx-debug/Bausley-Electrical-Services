@@ -40,7 +40,7 @@ export default function ServiceAreasPage() {
             {serviceAreas.map((area) => (
               <Link
                 key={area.slug}
-                to={`/service-areas/${area.slug}`}
+                to={`/${area.slug}`}
                 className="card card-hover group flex flex-col overflow-hidden"
               >
                 <div className="relative h-44 overflow-hidden">

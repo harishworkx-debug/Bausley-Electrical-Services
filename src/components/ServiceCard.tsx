@@ -13,7 +13,7 @@ export default function ServiceCard({ service, compact = false }: ServiceCardPro
 
   return (
     <Link
-      to={`/services/${service.slug}`}
+      to={`/${service.slug}`}
       className="card card-hover group flex flex-col overflow-hidden"
     >
       <div className="relative h-48 overflow-hidden">

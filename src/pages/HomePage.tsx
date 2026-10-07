@@ -18,6 +18,7 @@ import {
   Cable,
   Fan,
   LayoutGrid,
+  Star,
 } from 'lucide-react';
 import Seo from '@/components/Seo';
 import CtaBanner from '@/components/CtaBanner';
@@ -26,6 +27,7 @@ import FaqAccordion from '@/components/FaqAccordion';
 import { business, images } from '@/data/business';
 import { services } from '@/data/services';
 import { serviceAreas } from '@/data/serviceAreas';
+import { testimonials } from '@/data/testimonials';
 import { localBusinessSchema, faqSchema } from '@/data/structuredData';
 
 const homeFaqs = [
@@ -330,7 +332,7 @@ export default function HomePage() {
                   </li>
                 ))}
               </ul>
-              <Link to="/services/electrical-installation" className="btn btn-primary mt-8">
+              <Link to="/electrical-installation" className="btn btn-primary mt-8">
                 Explore Installation Services
                 <ArrowRight className="h-4 w-4" />
               </Link>
@@ -362,7 +364,7 @@ export default function HomePage() {
                   </div>
                 ))}
               </div>
-              <Link to="/services/electrical-repair-troubleshooting" className="btn btn-secondary mt-8">
+              <Link to="/electrical-repair-troubleshooting" className="btn btn-secondary mt-8">
                 View Repair & Troubleshooting
                 <ArrowRight className="h-4 w-4" />
               </Link>
@@ -454,7 +456,7 @@ export default function HomePage() {
             {serviceAreas.map((area) => (
               <Link
                 key={area.slug}
-                to={`/service-areas/${area.slug}`}
+                to={`/${area.slug}`}
                 className="card card-hover flex items-center justify-between p-4 group"
               >
                 <div>
@@ -472,6 +474,90 @@ export default function HomePage() {
               View All Service Areas
               <ArrowRight className="h-4 w-4" />
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="section bg-white">
+        <div className="container-x">
+          <div className="text-center">
+            <div className="inline-flex items-center gap-2 rounded-full bg-warning-50 px-4 py-2 text-sm font-semibold text-warning-700">
+              <Star className="h-4 w-4 fill-warning-500 text-warning-500" />
+              5.0 / 5.0 Rating
+            </div>
+            <h2 className="mt-6 text-balance font-display text-3xl font-bold text-navy-900 sm:text-4xl">
+              Real Reviews from Real Neighbors
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-balance text-charcoal-600">
+              Don't just take our word for it. See what homeowners in Valley and surrounding areas have to say about our electrical services.
+            </p>
+          </div>
+          
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {testimonials.slice(0, 6).map((testimonial, i) => (
+              <div key={i} className="flex flex-col justify-between rounded-2xl border border-navy-100 bg-navy-50/50 p-6 shadow-sm">
+                <div>
+                  <div className="flex items-center gap-1">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="h-4 w-4 fill-warning-400 text-warning-400" />
+                    ))}
+                  </div>
+                  <p className="mt-4 text-charcoal-700 leading-relaxed italic">
+                    "{testimonial.content}"
+                  </p>
+                </div>
+                <div className="mt-6 border-t border-navy-100 pt-4">
+                  <p className="font-display font-bold text-navy-900">{testimonial.author}</p>
+                  <p className="text-xs text-charcoal-500">{testimonial.timeAgo}</p>
+                  {testimonial.services && (
+                    <p className="mt-2 text-xs font-medium text-electric-600">Services: {testimonial.services}</p>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="section bg-white">
+        <div className="container-x">
+          <div className="text-center">
+            <div className="inline-flex items-center gap-2 rounded-full bg-warning-50 px-4 py-2 text-sm font-semibold text-warning-700">
+              <Star className="h-4 w-4 fill-warning-500 text-warning-500" />
+              5.0 / 5.0 Rating
+            </div>
+            <h2 className="mt-6 text-balance font-display text-3xl font-bold text-navy-900 sm:text-4xl">
+              Real Reviews from Real Neighbors
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-balance text-charcoal-600">
+              Don't just take our word for it. See what homeowners in Valley and surrounding areas have to say about our electrical services.
+            </p>
+          </div>
+          
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {testimonials.slice(0, 6).map((testimonial, i) => (
+              <div key={i} className="flex flex-col justify-between rounded-2xl border border-navy-100 bg-navy-50/50 p-6 shadow-sm">
+                <div>
+                  <div className="flex items-center gap-1">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="h-4 w-4 fill-warning-400 text-warning-400" />
+                    ))}
+                  </div>
+                  <p className="mt-4 text-charcoal-700 leading-relaxed italic">
+                    "{testimonial.content}"
+                  </p>
+                </div>
+                <div className="mt-6 border-t border-navy-100 pt-4">
+                  <p className="font-display font-bold text-navy-900">{testimonial.author}</p>
+                  <p className="text-xs text-charcoal-500">{testimonial.timeAgo}</p>
+                  {testimonial.services && (
+                    <p className="mt-2 text-xs font-medium text-electric-600">Services: {testimonial.services}</p>
+                  )}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

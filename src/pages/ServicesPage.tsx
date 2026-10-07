@@ -20,7 +20,7 @@ export default function ServicesPage() {
       { name: 'Services', url: '/services' },
     ]),
     ...services.map((s) =>
-      serviceSchema({ name: s.title, description: s.metaDescription, url: `/services/${s.slug}` })
+      serviceSchema({ name: s.title, description: s.metaDescription, url: `/${s.slug}` })
     ),
   ];
 

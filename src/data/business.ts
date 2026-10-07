@@ -14,7 +14,7 @@ export const business = {
   domain: 'https://www.bausleyelectricalservices.com',
   primaryLocation: 'Valley, Alabama',
   mapsEmbedUrl:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3360.0!2d-85.0!3d32.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTMgTGVlIFJkIDIxMjksIFZhbGxleSwgQUwgMzY4NTQsIFVuaXRlZCBTdGF0ZXM!5e0!3m2!1sen!2sus!4v1700000000000',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3356.1868190497717!2d-85.13492148872002!3d32.73422967357172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x888cbb975fb1442f%3A0x1cf863c0c7cccaf2!2sBausley%20Electrical%20Services!5e0!3m2!1sen!2sin!4v1791357147855!5m2!1sen!2sin',
   mapsLink: 'https://maps.app.goo.gl/REPLACE_WITH_PROVIDED_MAP_LINK',
 } as const;
 
