@@ -1,6 +1,6 @@
 import { useParams, Navigate, Link } from 'react-router-dom';
 import * as Icons from 'lucide-react';
-import { Phone, ArrowRight, CheckCircle2, AlertTriangle, ArrowLeft } from 'lucide-react';
+import { Phone, ArrowRight, CheckCircle2, AlertTriangle, ArrowLeft, MapPin } from 'lucide-react';
 import Seo from '@/components/Seo';
 import PageHero from '@/components/PageHero';
 import CtaBanner from '@/components/CtaBanner';
