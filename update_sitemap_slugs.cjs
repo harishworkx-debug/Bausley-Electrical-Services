@@ -16,8 +16,8 @@ const serviceSlugs = [
 let content = fs.readFileSync('public/sitemap.xml', 'utf8');
 
 serviceSlugs.forEach(slug => {
-  const regex = new RegExp(`>https://bausleyelectrical.com/${slug}<`, 'g');
-  content = content.replace(regex, `>https://bausleyelectrical.com/${slug}-valley-al<`);
+  const regex = new RegExp(`>https://www.bausleyelectricalservices.com/${slug}<`, 'g');
+  content = content.replace(regex, `>https://www.bausleyelectricalservices.com/${slug}-valley-al<`);
 });
 
 fs.writeFileSync('public/sitemap.xml', content, 'utf8');
