@@ -41,7 +41,7 @@ export default function Footer() {
               Services
             </h3>
             <ul className="mt-4 space-y-2.5">
-              {services.slice(0, 6).map((service) => (
+              {services.map((service) => (
                 <li key={service.slug}>
                   <Link
                     to={`/${service.slug}`}
@@ -68,7 +68,7 @@ export default function Footer() {
               Service Areas
             </h3>
             <ul className="mt-4 space-y-2.5">
-              {serviceAreas.slice(0, 6).map((area) => (
+              {serviceAreas.map((area) => (
                 <li key={area.slug}>
                   <Link
                     to={`/${area.slug}`}
