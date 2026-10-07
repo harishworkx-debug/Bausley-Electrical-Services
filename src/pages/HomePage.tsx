@@ -332,7 +332,7 @@ export default function HomePage() {
                   </li>
                 ))}
               </ul>
-              <Link to="/electrical-installation" className="btn btn-primary mt-8">
+              <Link to="/electrical-installation-valley-al" className="btn btn-primary mt-8">
                 Explore Installation Services
                 <ArrowRight className="h-4 w-4" />
               </Link>
@@ -364,7 +364,7 @@ export default function HomePage() {
                   </div>
                 ))}
               </div>
-              <Link to="/electrical-repair-troubleshooting" className="btn btn-secondary mt-8">
+              <Link to="/electrical-repair-troubleshooting-valley-al" className="btn btn-secondary mt-8">
                 View Repair & Troubleshooting
                 <ArrowRight className="h-4 w-4" />
               </Link>

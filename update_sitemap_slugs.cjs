@@ -1,23 +1,23 @@
 const fs = require('fs');
 
-let content = fs.readFileSync('public/sitemap.xml', 'utf8');
-
-const areas = [
-  'valley-al',
-  'lanett-al',
-  'west-point-ga',
-  'la-fayette-al',
-  'opelika-al',
-  'auburn-al',
-  'phenix-city-al',
-  'salem-al',
-  'cusseta-al',
-  'chambers-county-al'
+const serviceSlugs = [
+  'electrical-installation',
+  'electrical-repair-troubleshooting',
+  'electrical-panel-repair-upgrades',
+  'circuit-breaker-services',
+  'wiring-rewiring',
+  'outlet-switch-installation',
+  'lighting-installation',
+  'ceiling-fan-installation',
+  'electrical-grounding-safety',
+  'electrical-power-restoration-diagnostics'
 ];
 
-areas.forEach(area => {
-  const regex = new RegExp(`>https://www.bausleyelectricalservices.com/${area}<`, 'g');
-  content = content.replace(regex, `>https://www.bausleyelectricalservices.com/electrician-${area}<`);
+let content = fs.readFileSync('public/sitemap.xml', 'utf8');
+
+serviceSlugs.forEach(slug => {
+  const regex = new RegExp(`>https://bausleyelectrical.com/${slug}<`, 'g');
+  content = content.replace(regex, `>https://bausleyelectrical.com/${slug}-valley-al<`);
 });
 
 fs.writeFileSync('public/sitemap.xml', content, 'utf8');
