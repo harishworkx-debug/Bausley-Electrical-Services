@@ -10,64 +10,44 @@ import { faqSchema, breadcrumbSchema } from '@/data/structuredData';
 
 const generalFaqs = [
   {
-    question: 'What electrical services does Bausley Electrical Services offer?',
+    question: 'How quickly can an electrician come to my Valley home?',
     answer:
-      'We offer a full range of residential electrical services including electrical installation, repair and troubleshooting, panel upgrades, circuit breaker services, wiring and rewiring, outlet and switch installation, lighting installation, ceiling fan installation, grounding and safety improvements, and power restoration and diagnostics.',
+      'We understand that electrical issues can disrupt your day. For our neighbors in Valley, Lanett, and the immediate surrounding areas, we prioritize prompt scheduling. While standard service calls are typically scheduled within a few days, we also offer emergency troubleshooting by appointment. Call us directly at 334-848-0075 for the fastest response time.',
   },
   {
-    question: 'What areas do you serve?',
+    question: 'Why does my breaker keep tripping?',
     answer:
-      'We are based in Valley, Alabama, and serve the surrounding area including Lanett, West Point, La Fayette, Opelika, Auburn, Phenix City, Salem, Cusseta, and communities throughout Chambers County and Lee County. If you are not sure whether we cover your area, call us at 334-497-0921.',
+      'A breaker trips to protect your home from an electrical fire. It usually indicates one of three things: an overloaded circuit (too many appliances running at once), a short circuit (wires touching that shouldn\'t be), or a ground fault. Do not simply tape the breaker or force it to stay on. Give us a call, and we will use diagnostic tools to safely locate and resolve the underlying fault.',
   },
   {
-    question: 'How do I schedule an electrical service visit?',
+    question: 'When should an electrical panel be upgraded?',
     answer:
-      'The fastest way to schedule a visit is to call us at 334-497-0921. You can also use our contact form on the Contact page to send us a message, and we will get back to you to arrange a time.',
+      'You should strongly consider a panel upgrade if your home is over 30-40 years old, still has a fuse box, or utilizes an outdated Federal Pacific or Zinsco panel (known safety hazards). Other signs include flickering lights when the AC turns on, a panel that feels warm to the touch, or insufficient capacity (you need more breakers for a renovation, EV charger, or new appliances).',
   },
   {
-    question: 'Do you work on older homes that need wiring updates?',
+    question: 'Do you handle electrical troubleshooting?',
     answer:
-      'Yes. We have experience working with older homes that need wiring inspection, repair, or full rewiring. If your home has original wiring that is decades old, we can assess its condition and recommend the appropriate updates for safety and capacity.',
+      'Yes, advanced troubleshooting is one of our core specialties. Whether you have half of your house losing power unexpectedly, a single dead outlet, or mysterious flickering lights, we use professional testing equipment to isolate the problem at its source rather than just guessing. This saves you time and ensures a permanent fix.',
   },
   {
-    question: 'Can you help with electrical emergencies like power loss?',
+    question: 'Do you install ceiling fans?',
     answer:
-      'Yes. We provide power restoration and diagnostic services to identify the cause of partial or complete power loss and restore safe electrical service. Call us at 334-497-0921 if you are experiencing a power issue.',
+      'Yes. Installing a ceiling fan is more complex than a standard light fixture because it requires a specialized, heavy-duty support box securely anchored to the ceiling joists. We ensure your new fan is mounted safely, wired correctly, and perfectly balanced to prevent wobbling or noise.',
   },
   {
-    question: 'What should I do if I notice a burning smell from an outlet or switch?',
+    question: 'Can you add outlets or switches?',
     answer:
-      'A burning smell from an outlet or switch can indicate a serious electrical hazard. Turn off the power at your breaker panel if possible and do not use the affected outlet or switch. Call us immediately at 334-497-0921 to have the issue inspected and repaired.',
+      'Absolutely. We can add new standard outlets, upgrade older two-prong receptacles to grounded three-prong (or GFCI) outlets, install convenient USB charging ports, and add dimmer or smart switches. We carefully route the new wiring to minimize any disruption to your drywall.',
   },
   {
-    question: 'How do I know if my electrical panel needs an upgrade?',
+    question: 'Do you provide electrical inspections?',
     answer:
-      'Common signs include frequent breaker trips, flickering lights, a warm panel, or a panel rated below 200 amps for a modern household. We can inspect your panel and recommend whether an upgrade is needed. See our Electrical Panel Repair & Upgrades page for more information.',
+      'Yes. We highly recommend a thorough electrical inspection if you are purchasing a new home, living in a property older than 40 years, or planning major renovations. We check the integrity of your panel, verify grounding systems, test smoke detectors, and ensure your home meets current National Electrical Code (NEC) safety standards.',
   },
   {
-    question: 'Do you install ceiling fans and light fixtures?',
+    question: 'Which areas around Valley do you serve?',
     answer:
-      'Yes, we install ceiling fans and light fixtures of all types. This includes recessed lighting, pendant lights, outdoor lighting, and ceiling fans with proper fan-rated support boxes. See our Lighting Installation and Ceiling Fan Installation pages for details.',
-  },
-  {
-    question: 'What is the difference between GFCI and AFCI protection?',
-    answer:
-      'GFCI (Ground Fault Circuit Interrupter) protection guards against electric shock in wet areas like kitchens, bathrooms, and outdoors. AFCI (Arc Fault Circuit Interrupter) protection detects dangerous electrical arcs that can cause fires. Both are required by current electrical codes in specific areas of the home.',
-  },
-  {
-    question: 'Can you add additional outlets to my home?',
-    answer:
-      'Yes. We install new outlets in any room, including GFCI outlets for wet areas, USB outlets for convenient charging, and smart outlets. We assess your existing wiring and recommend a safe layout that meets your needs and local code requirements.',
-  },
-  {
-    question: 'How often should I have my electrical system inspected?',
-    answer:
-      'For homes over 30 years old, a safety inspection every 3-5 years is recommended. We also recommend an inspection before purchasing an older home, after major renovations, or if you notice any warning signs of electrical problems such as flickering lights or tripping breakers.',
-  },
-  {
-    question: 'Do you provide whole-house surge protection?',
-    answer:
-      'Yes. We install whole-house surge protectors at the electrical panel to protect your home from voltage spikes caused by lightning, grid switching, or other external surges. This supplements but does not replace point-of-use surge protectors for sensitive electronics.',
+      'Our home base is Valley, Alabama, but we regularly serve the surrounding East Alabama and West Georgia communities. This includes Lanett, West Point (GA), LaFayette, Opelika, Auburn, Phenix City, Salem, Cusseta, and throughout Chambers County. As fully licensed contractors in both AL and GA, we legally handle all cross-border permitting.',
   },
 ];
 

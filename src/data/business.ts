@@ -1,15 +1,15 @@
 export const business = {
   name: 'Bausley Electrical Services',
   shortName: 'Bausley Electrical',
-  phone: '334-497-0921',
-  phoneRaw: '3344970921',
+  phone: '334-848-0075',
+  phoneRaw: '3348480075',
   address: {
     street: '53 Lee Rd 2129',
     city: 'Valley',
     state: 'AL',
     zip: '36854',
     country: 'United States',
-    full: '53 Lee Rd 2129, Valley, AL 36854, United States',
+    full: '53 Lee Rd 2129, Valley, AL 36854',
   },
   domain: 'https://www.bausleyelectricalservices.com',
   primaryLocation: 'Valley, Alabama',

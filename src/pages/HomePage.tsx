@@ -44,7 +44,7 @@ const homeFaqs = [
   {
     question: 'How do I schedule an electrical service visit?',
     answer:
-      'The fastest way to schedule a visit is to call us at 334-497-0921. You can also use our contact form on the Contact page to send us a message, and we will get back to you to arrange a time.',
+      'The fastest way to schedule a visit is to call us at 334-848-0075. You can also use our contact form on the Contact page to send us a message, and we will get back to you to arrange a time.',
   },
   {
     question: 'Do you work on older homes that need wiring updates?',
@@ -54,12 +54,12 @@ const homeFaqs = [
   {
     question: 'Can you help with electrical emergencies like power loss?',
     answer:
-      'Yes. We provide power restoration and diagnostic services to identify the cause of partial or complete power loss and restore safe electrical service. Call us at 334-497-0921 if you are experiencing a power issue.',
+      'Yes. We provide power restoration and diagnostic services to identify the cause of partial or complete power loss and restore safe electrical service. Call us at 334-848-0075 if you are experiencing a power issue.',
   },
   {
     question: 'What should I do if I notice a burning smell from an outlet or switch?',
     answer:
-      'A burning smell from an outlet or switch can indicate a serious electrical hazard. Turn off the power at your breaker panel if possible and do not use the affected outlet or switch. Call us immediately at 334-497-0921 to have the issue inspected and repaired.',
+      'A burning smell from an outlet or switch can indicate a serious electrical hazard. Turn off the power at your breaker panel if possible and do not use the affected outlet or switch. Call us immediately at 334-848-0075 to have the issue inspected and repaired.',
   },
 ];
 
@@ -76,8 +76,8 @@ export default function HomePage() {
   return (
     <>
       <Seo
-        title="Bausley Electrical Services | Reliable Electrician in Valley, AL"
-        description="Bausley Electrical Services provides reliable electrical installation, repair, panel upgrades, wiring, and lighting services in Valley, Alabama. Call 334-497-0921."
+        title="Electrician in Valley, AL | Bausley Electrical Services"
+        description="Bausley Electrical Services provides reliable electrical installation, repair, panel upgrades, wiring, and lighting services in Valley, Alabama. Call 334-848-0075."
         canonicalPath="/"
         structuredData={localBusinessSchema}
       />
@@ -103,11 +103,11 @@ export default function HomePage() {
               Serving Valley, Alabama & Surrounding Areas
             </div>
             <h1 className="animate-fade-in-up mt-6 text-balance font-display text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
-              Reliable Electrical Services in{' '}
-              <span className="text-electric-400">Valley, Alabama</span>
+              Trusted Electrician in{' '}
+              <span className="text-electric-400">Valley, AL</span>
             </h1>
             <p className="animate-fade-in-up mt-6 max-w-2xl text-balance text-lg text-navy-200 sm:text-xl">
-              From installation and repair to panel upgrades and safety improvements — Bausley Electrical Services delivers dependable electrical workmanship for your home.
+              Looking for a reliable <strong>electrician near Valley AL</strong>? From expert electrical repair and <strong>panel upgrades</strong> to comprehensive <strong>residential electrician</strong> services, Bausley Electrical Services delivers dependable workmanship for your home.
             </p>
             <div className="animate-fade-in-up mt-8 flex flex-col gap-4 sm:flex-row">
               <a href={`tel:${business.phoneRaw}`} className="btn btn-primary text-base animate-pulse-glow">
@@ -156,13 +156,13 @@ export default function HomePage() {
                 About Bausley Electrical Services
               </div>
               <h2 className="mt-6 text-balance font-display text-3xl font-bold text-navy-900 sm:text-4xl">
-                Your Local Electrical Service in Valley, Alabama
+                Your Local Electrical Contractor in Valley, AL
               </h2>
               <p className="mt-4 text-lg text-charcoal-600">
-                Bausley Electrical Services provides electrical installation, repair, and safety services to homeowners in Valley and the surrounding communities. We focus on doing the job right — with careful workmanship, clear communication, and dependable service you can count on.
+                Finding a trustworthy <strong>electrician in Valley AL</strong> shouldn't be a hassle. Bausley Electrical Services provides expert electrical installation, fast electrical repairs, and safety upgrades to homeowners throughout Valley and the surrounding communities. We focus on doing the job right — with careful workmanship, clear communication, and dependable service.
               </p>
               <p className="mt-4 text-charcoal-600">
-                Whether you need a new outlet installed, a panel upgraded, wiring inspected, or a complex electrical problem diagnosed, we approach every project with the same commitment to quality and safety.
+                Whether you need an <strong>emergency electrician</strong> to diagnose an urgent issue, a skilled professional for a <strong>panel upgrade</strong>, or a dedicated <strong>residential electrician</strong> for a remodeling project, we approach every job with a strict commitment to safety and quality.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <Link to="/about" className="btn btn-secondary">
@@ -452,8 +452,8 @@ export default function HomePage() {
               Based in Valley, we provide electrical services to homeowners throughout the surrounding area in Alabama and nearby Georgia.
             </p>
           </div>
-          <div className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
-            {serviceAreas.map((area) => (
+          <div className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {serviceAreas.slice(0, 4).map((area) => (
               <Link
                 key={area.slug}
                 to={`/${area.slug}`}
@@ -521,46 +521,7 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="section bg-white">
-        <div className="container-x">
-          <div className="text-center">
-            <div className="inline-flex items-center gap-2 rounded-full bg-warning-50 px-4 py-2 text-sm font-semibold text-warning-700">
-              <Star className="h-4 w-4 fill-warning-500 text-warning-500" />
-              5.0 / 5.0 Rating
-            </div>
-            <h2 className="mt-6 text-balance font-display text-3xl font-bold text-navy-900 sm:text-4xl">
-              Real Reviews from Real Neighbors
-            </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-balance text-charcoal-600">
-              Don't just take our word for it. See what homeowners in Valley and surrounding areas have to say about our electrical services.
-            </p>
-          </div>
-          
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {testimonials.slice(0, 6).map((testimonial, i) => (
-              <div key={i} className="flex flex-col justify-between rounded-2xl border border-navy-100 bg-navy-50/50 p-6 shadow-sm">
-                <div>
-                  <div className="flex items-center gap-1">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-warning-400 text-warning-400" />
-                    ))}
-                  </div>
-                  <p className="mt-4 text-charcoal-700 leading-relaxed italic">
-                    "{testimonial.content}"
-                  </p>
-                </div>
-                <div className="mt-6 border-t border-navy-100 pt-4">
-                  <p className="font-display font-bold text-navy-900">{testimonial.author}</p>
-                  <p className="text-xs text-charcoal-500">{testimonial.timeAgo}</p>
-                  {testimonial.services && (
-                    <p className="mt-2 text-xs font-medium text-electric-600">Services: {testimonial.services}</p>
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+
 
       {/* FAQ Section */}
       <section className="bg-navy-50 section">
@@ -635,7 +596,8 @@ export default function HomePage() {
                   </div>
                   <div>
                     <p className="font-display text-sm font-bold text-navy-900">Hours</p>
-                    <p className="text-charcoal-600">By appointment — call to schedule</p>
+                    <p className="text-charcoal-600">Mon - Fri: 8:00 AM - 5:00 PM</p>
+                    <p className="text-xs font-semibold text-warning-600 mt-0.5">24/7 Emergency Service Available</p>
                   </div>
                 </div>
               </div>

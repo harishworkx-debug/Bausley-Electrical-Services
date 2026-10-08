@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, Phone } from 'lucide-react';
+import { business } from '@/data/business';
 
 interface BreadcrumbItem {
   label: string;
@@ -11,9 +12,10 @@ interface PageHeroProps {
   description?: string;
   breadcrumbs: BreadcrumbItem[];
   image?: string;
+  showCta?: boolean;
 }
 
-export default function PageHero({ title, description, breadcrumbs, image }: PageHeroProps) {
+export default function PageHero({ title, description, breadcrumbs, image, showCta = false }: PageHeroProps) {
   return (
     <section className="relative overflow-hidden bg-navy-900">
       {image && (
@@ -23,6 +25,7 @@ export default function PageHero({ title, description, breadcrumbs, image }: Pag
             alt=""
             className="h-full w-full object-cover opacity-20"
             loading="eager"
+            fetchPriority="high"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-navy-950 via-navy-900/90 to-navy-900/60" />
         </div>
@@ -60,6 +63,17 @@ export default function PageHero({ title, description, breadcrumbs, image }: Pag
           <p className="mt-4 max-w-3xl text-balance text-lg text-navy-200">
             {description}
           </p>
+        )}
+        {showCta && (
+          <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+            <a href={`tel:${business.phoneRaw}`} className="btn btn-primary text-base animate-pulse-glow">
+              <Phone className="h-5 w-5" />
+              Call Bausley: {business.phone}
+            </a>
+            <Link to="/contact" className="btn btn-outline border-navy-600 text-white hover:border-electric-400 hover:bg-electric-400 hover:text-navy-900">
+              Request Electrical Service
+            </Link>
+          </div>
         )}
       </div>
     </section>

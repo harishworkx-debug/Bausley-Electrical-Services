@@ -22,7 +22,7 @@ export default function ServiceAreasPage() {
     <>
       <Seo
         title="Service Areas | Bausley Electrical Services"
-        description="Bausley Electrical Services serves Valley, Alabama and surrounding communities including Lanett, West Point, La Fayette, Opelika, Auburn, and more. Call 334-497-0921."
+        description="Bausley Electrical Services serves Valley, Alabama and surrounding communities including Lanett, West Point, La Fayette, Opelika, Auburn, and more. Call 334-848-0075."
         canonicalPath="/service-areas"
         structuredData={structuredData}
       />

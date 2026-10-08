@@ -68,7 +68,7 @@ export default function Footer() {
               Service Areas
             </h3>
             <ul className="mt-4 space-y-2.5">
-              {serviceAreas.map((area) => (
+              {serviceAreas.slice(0, 4).map((area) => (
                 <li key={area.slug}>
                   <Link
                     to={`/${area.slug}`}

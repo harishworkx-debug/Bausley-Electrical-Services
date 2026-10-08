@@ -54,28 +54,53 @@ export default function AboutPage() {
                 Our Story
               </div>
               <h2 className="mt-6 text-balance font-display text-3xl font-bold text-navy-900 sm:text-4xl">
-                Local Electrical Service You Can Depend On
+                Rooted in Valley, Alabama
               </h2>
               <p className="mt-4 text-lg text-charcoal-600">
-                Bausley Electrical Services provides electrical installation, repair, and safety services to homeowners in Valley, Alabama, and the surrounding communities. We are a local business that takes pride in doing quality electrical work for our neighbors.
+                Bausley Electrical Services wasn't built overnight. We started with a simple premise: homeowners in East Alabama and West Georgia deserve an electrical contractor who actually shows up on time, explains the problem clearly, and fixes it safely without cutting corners.
               </p>
               <p className="mt-4 text-charcoal-600">
-                Our approach is straightforward: do the job right, communicate clearly, and treat every home with the care and respect it deserves. Whether we are installing a new fixture, upgrading an electrical panel, or troubleshooting a complex issue, we bring the same level of attention and professionalism to every project.
+                With years of hands-on experience navigating the unique structural challenges of both historic Southern homes and modern new builds, our team has grown into one of the most trusted names in the Valley area. We don't just work here; we live here, and we treat every client's home exactly how we would treat our own.
               </p>
-              <p className="mt-4 text-charcoal-600">
-                We understand that electrical work is about more than just wires and panels — it is about the safety and comfort of your home and family. That is why we focus on safety-conscious service in everything we do.
-              </p>
+              
+              {/* Credentials Block */}
+              <div className="mt-8 rounded-xl border border-navy-100 bg-navy-50 p-6 shadow-sm">
+                <h3 className="font-display text-lg font-bold text-navy-900">Licenses & Credentials</h3>
+                <ul className="mt-4 space-y-3">
+                  <li className="flex items-start gap-3">
+                    <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-success-600" />
+                    <span className="text-sm font-medium text-navy-800">Fully Licensed in Alabama & Georgia</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-success-600" />
+                    <span className="text-sm font-medium text-navy-800">Comprehensive General Liability Insurance</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-success-600" />
+                    <span className="text-sm font-medium text-navy-800">Bonded for Customer Protection</span>
+                  </li>
+                </ul>
+              </div>
             </div>
             <div className="grid gap-4">
-              <div className="overflow-hidden rounded-2xl shadow-lg">
-                <img src={images.electricianPanel} alt="Electrician working on an electrical panel" className="w-full object-cover" loading="lazy" />
+              <div className="overflow-hidden rounded-2xl shadow-lg relative group">
+                <img src={images.electricianPanel} alt="Electrician performing a comprehensive panel upgrade in Valley, AL" className="w-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+                <div className="absolute bottom-4 left-4 rounded-lg bg-navy-900/90 px-3 py-1.5 text-xs font-semibold text-white backdrop-blur-sm">
+                  Recent Panel Upgrade
+                </div>
               </div>
               <div className="grid grid-cols-2 gap-4">
-                <div className="overflow-hidden rounded-xl shadow-lg">
-                  <img src={images.wiringCutting} alt="Technician organizing electrical wires" className="h-full w-full object-cover" loading="lazy" />
+                <div className="overflow-hidden rounded-xl shadow-lg relative group">
+                  <img src={images.wiringCutting} alt="Precision wiring installation by Bausley Electrical" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+                  <div className="absolute bottom-3 left-3 rounded-lg bg-navy-900/90 px-2 py-1 text-[10px] font-semibold text-white backdrop-blur-sm">
+                    Safety First
+                  </div>
                 </div>
-                <div className="overflow-hidden rounded-xl shadow-lg">
-                  <img src={images.outletGloved} alt="Electrician installing an outlet with gloved hands" className="h-full w-full object-cover" loading="lazy" />
+                <div className="overflow-hidden rounded-xl shadow-lg relative group">
+                  <img src={images.outletGloved} alt="Professional outlet replacement" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+                  <div className="absolute bottom-3 left-3 rounded-lg bg-navy-900/90 px-2 py-1 text-[10px] font-semibold text-white backdrop-blur-sm">
+                    Detailed Work
+                  </div>
                 </div>
               </div>
             </div>
@@ -83,44 +108,74 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Values */}
-      <section className="bg-navy-50 section">
+      {/* Values & Proof */}
+      <section className="bg-navy-50 section border-y border-navy-100">
         <div className="container-x">
-          <div className="text-center">
-            <h2 className="text-balance font-display text-3xl font-bold text-navy-900 sm:text-4xl">
-              What We Stand For
-            </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-balance text-charcoal-600">
-              The values that guide every electrical project we take on.
-            </p>
-          </div>
-          <div className="mt-12 grid gap-8 md:grid-cols-3">
-            <div className="card card-hover p-8 text-center">
-              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-xl bg-navy-900">
-                <Wrench className="h-7 w-7 text-electric-400" />
-              </div>
-              <h3 className="mt-6 font-display text-xl font-bold text-navy-900">Workmanship</h3>
-              <p className="mt-3 text-sm text-charcoal-600">
-                We take pride in the quality of our electrical work. Every installation, repair, and upgrade is done with care, precision, and attention to detail — not rushed or cut short.
+          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+            <div>
+              <h2 className="text-balance font-display text-3xl font-bold text-navy-900 sm:text-4xl">
+                Why Homeowners Choose Bausley
+              </h2>
+              <p className="mt-4 text-lg text-charcoal-600">
+                It is easy to say we do good work, but our reputation proves it. With a flawless 5.0-star rating across highly competitive local markets, our service philosophy revolves around complete transparency.
               </p>
+              
+              <div className="mt-8 space-y-6">
+                <div className="flex gap-4">
+                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-white shadow-sm border border-navy-100">
+                    <CheckCircle2 className="h-6 w-6 text-electric-500" />
+                  </div>
+                  <div>
+                    <h3 className="font-display text-lg font-bold text-navy-900">First-Hand Proof</h3>
+                    <p className="mt-1 text-sm text-charcoal-600">
+                      Our clients consistently highlight our ability to diagnose complex issues that other contractors missed. We document our work and walk you through every repair step.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-white shadow-sm border border-navy-100">
+                    <Clock className="h-6 w-6 text-electric-500" />
+                  </div>
+                  <div>
+                    <h3 className="font-display text-lg font-bold text-navy-900">Punctuality & Respect</h3>
+                    <p className="mt-1 text-sm text-charcoal-600">
+                      We know your time is valuable. We arrive when scheduled, protect your floors and furniture, and clean up our workspace entirely before leaving.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-white shadow-sm border border-navy-100">
+                    <MessageSquare className="h-6 w-6 text-electric-500" />
+                  </div>
+                  <div>
+                    <h3 className="font-display text-lg font-bold text-navy-900">No Upfront Surprises</h3>
+                    <p className="mt-1 text-sm text-charcoal-600">
+                      We believe in upfront, transparent communication regarding pricing and timelines. You will never be caught off guard by hidden fees on your final invoice.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="card card-hover p-8 text-center">
-              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-xl bg-navy-900">
-                <ShieldCheck className="h-7 w-7 text-electric-400" />
+            
+            {/* Reputation Badge */}
+            <div className="flex justify-center lg:justify-end">
+              <div className="max-w-sm rounded-2xl bg-white p-8 shadow-xl border border-navy-50 text-center">
+                <div className="flex justify-center mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="h-8 w-8 text-warning-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+                <p className="font-display text-4xl font-bold text-navy-900">5.0</p>
+                <p className="mt-2 font-medium text-charcoal-700">Perfect Rating</p>
+                <p className="mt-2 text-sm text-charcoal-500">
+                  Based on verified reviews from homeowners in Valley, Lanett, and West Point.
+                </p>
+                <Link to="/contact" className="btn btn-outline mt-6 w-full">
+                  Read Our Reviews
+                </Link>
               </div>
-              <h3 className="mt-6 font-display text-xl font-bold text-navy-900">Safety</h3>
-              <p className="mt-3 text-sm text-charcoal-600">
-                Electrical work carries real risks. We approach every job with a safety-first mindset — for your home, your family, and everyone who relies on your electrical system.
-              </p>
-            </div>
-            <div className="card card-hover p-8 text-center">
-              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-xl bg-navy-900">
-                <MessageSquare className="h-7 w-7 text-electric-400" />
-              </div>
-              <h3 className="mt-6 font-display text-xl font-bold text-navy-900">Communication</h3>
-              <p className="mt-3 text-sm text-charcoal-600">
-                We believe you deserve to understand what is happening with your home's electrical system. We explain our work clearly and answer your questions honestly.
-              </p>
             </div>
           </div>
         </div>

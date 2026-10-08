@@ -28,7 +28,7 @@ export default function ServicesPage() {
     <>
       <Seo
         title="Electrical Services in Valley, AL | Bausley Electrical Services"
-        description="Complete electrical services in Valley, Alabama — installation, repair, panel upgrades, wiring, outlets, lighting, ceiling fans, grounding, and diagnostics. Call 334-497-0921."
+        description="Complete electrical services in Valley, Alabama — installation, repair, panel upgrades, wiring, outlets, lighting, ceiling fans, grounding, and diagnostics. Call 334-848-0075."
         canonicalPath="/services"
         structuredData={structuredData}
       />

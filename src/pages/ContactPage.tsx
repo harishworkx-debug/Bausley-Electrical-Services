@@ -100,13 +100,13 @@ export default function ContactPage() {
     <>
       <Seo
         title="Contact Us | Bausley Electrical Services - Valley, AL"
-        description="Contact Bausley Electrical Services at 334-497-0921. Located at 53 Lee Rd 2129, Valley, AL 36854. Call for electrical installation, repair, and safety services."
+        description="Contact Bausley Electrical Services at 334-848-0075. Located at 53 Lee Rd 2129, Valley, AL 36854. Call for electrical installation, repair, and safety services."
         canonicalPath="/contact"
         structuredData={structuredData}
       />
       <PageHero
         title="Contact Us"
-        description="Call us at 334-497-0921 or send a message using the form below. We are here to help with your electrical needs in Valley, Alabama."
+        description="Call us at 334-848-0075 or send a message using the form below. We are here to help with your electrical needs in Valley, Alabama."
         breadcrumbs={breadcrumbs}
         image={images.electricianWiring}
       />
@@ -155,9 +155,21 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-display text-base font-bold text-navy-900">Hours</h3>
-                    <p className="mt-1 text-sm text-charcoal-500">Service availability</p>
-                    <p className="mt-1 text-charcoal-600">By appointment</p>
-                    <p className="text-sm text-charcoal-500">Call to schedule a visit</p>
+                    <p className="mt-1 text-sm text-charcoal-500">Mon - Fri: 8:00 AM - 5:00 PM</p>
+                    <p className="text-sm font-semibold text-warning-600 mt-1">24/7 Emergency Service Available</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Service Areas */}
+              <div className="card p-6">
+                <div className="flex items-start gap-4">
+                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-navy-900">
+                    <MapPin className="h-6 w-6 text-electric-400" />
+                  </div>
+                  <div>
+                    <h3 className="font-display text-base font-bold text-navy-900">Service Area</h3>
+                    <p className="mt-1 text-sm text-charcoal-600">Valley, Lanett, West Point, LaFayette, and surrounding communities in East AL & West GA.</p>
                   </div>
                 </div>
               </div>

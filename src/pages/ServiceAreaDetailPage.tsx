@@ -8,6 +8,8 @@ import { business, images } from '@/data/business';
 import { serviceAreas, getAreaBySlug } from '@/data/serviceAreas';
 import { services, getServiceBySlug } from '@/data/services';
 import { breadcrumbSchema, faqSchema } from '@/data/structuredData';
+import { testimonials } from '@/data/testimonials';
+import { Star } from 'lucide-react';
 
 export default function ServiceAreaDetailPage() {
   const { slug } = useParams<{ slug: string }>();
@@ -75,6 +77,7 @@ export default function ServiceAreaDetailPage() {
         description={area.description}
         breadcrumbs={breadcrumbs}
         image={images.residentialHome}
+        showCta={true}
       />
 
       {/* Main content */}
@@ -236,6 +239,39 @@ export default function ServiceAreaDetailPage() {
                 </Link>
               </div>
             </aside>
+          </div>
+        </div>
+      </section>
+
+      {/* Customer Proof Section */}
+      <section className="section bg-white border-t border-navy-50">
+        <div className="container-x">
+          <div className="text-center">
+            <h2 className="font-display text-2xl font-bold text-navy-900">
+              Trusted in {area.city}
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-charcoal-600">
+              See what local homeowners are saying about our electrical services.
+            </p>
+          </div>
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {testimonials.slice(0, 3).map((testimonial, i) => (
+              <div key={i} className="flex flex-col justify-between rounded-2xl border border-navy-100 bg-navy-50/50 p-6 shadow-sm">
+                <div>
+                  <div className="flex items-center gap-1">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="h-4 w-4 fill-warning-400 text-warning-400" />
+                    ))}
+                  </div>
+                  <p className="mt-4 text-sm text-charcoal-700 italic">
+                    "{testimonial.content}"
+                  </p>
+                </div>
+                <div className="mt-6 border-t border-navy-100 pt-4">
+                  <p className="font-display text-sm font-bold text-navy-900">{testimonial.author}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
