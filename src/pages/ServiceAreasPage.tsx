@@ -37,7 +37,7 @@ export default function ServiceAreasPage() {
       <section className="section">
         <div className="container-x">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {serviceAreas.map((area) => (
+            {serviceAreas.filter(Boolean).map((area) => (
               <Link
                 key={area.slug}
                 to={`/${area.slug}`}

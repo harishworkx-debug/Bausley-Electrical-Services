@@ -187,6 +187,7 @@ export default function ServiceAreaDetailPage() {
               </p>
               <div className="mt-4 grid gap-3 sm:grid-cols-2">
                 {services
+                  .filter(Boolean)
                   .filter((s) => s.slug !== area.primaryService.slug)
                   .map((service) => (
                     <Link

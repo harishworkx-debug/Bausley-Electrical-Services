@@ -117,7 +117,7 @@ export default function Header() {
                       All Services →
                     </Link>
                     <div className="max-h-[28rem] overflow-y-auto">
-                      {services.map((service) => (
+                      {services.filter(Boolean).map((service) => (
                         <Link
                           key={service.slug}
                           to={`/${service.slug}`}
@@ -158,7 +158,7 @@ export default function Header() {
                       All Service Areas →
                     </Link>
                     <div className="max-h-[24rem] overflow-y-auto">
-                      {serviceAreas.map((area) => (
+                      {serviceAreas.filter(Boolean).map((area) => (
                         <Link
                           key={area.slug}
                           to={`/${area.slug}`}
@@ -229,7 +229,7 @@ export default function Header() {
                     <Link to="/services" className="block rounded-lg px-4 py-2.5 text-sm font-semibold text-navy-900 hover:bg-navy-50">
                       All Services
                     </Link>
-                    {services.map((service) => (
+                    {services.filter(Boolean).map((service) => (
                       <Link
                         key={service.slug}
                         to={`/${service.slug}`}
@@ -257,7 +257,7 @@ export default function Header() {
                     <Link to="/service-areas" className="block rounded-lg px-4 py-2.5 text-sm font-semibold text-navy-900 hover:bg-navy-50">
                       All Service Areas
                     </Link>
-                    {serviceAreas.map((area) => (
+                    {serviceAreas.filter(Boolean).map((area) => (
                       <Link
                         key={area.slug}
                         to={`/${area.slug}`}

@@ -268,4 +268,4 @@ export const serviceAreas: ServiceAreaData[] = [
 ];
 
 export const getAreaBySlug = (slug: string): ServiceAreaData | undefined =>
-  serviceAreas.find((a) => a.slug === slug);
+  serviceAreas.find((a) => a?.slug === slug);

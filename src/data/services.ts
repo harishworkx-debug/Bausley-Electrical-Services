@@ -645,7 +645,6 @@ export const services: ServiceData[] = [
       { slug: 'electrical-panel-repair-upgrades-valley-al', label: 'Explore Panel Repair & Upgrades' },
     ],
   },
-,
   {
     slug: 'emergency-electrician-valley-al',
     title: 'Emergency Electrician',
@@ -1089,4 +1088,4 @@ export const services: ServiceData[] = [
 ];
 
 export const getServiceBySlug = (slug: string): ServiceData | undefined =>
-  services.find((s) => s.slug === slug);
+  services.find((s) => s?.slug === slug);

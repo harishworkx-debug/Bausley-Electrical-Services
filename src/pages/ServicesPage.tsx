@@ -19,7 +19,7 @@ export default function ServicesPage() {
       { name: 'Home', url: '/' },
       { name: 'Services', url: '/services' },
     ]),
-    ...services.map((s) =>
+    ...services.filter(Boolean).map((s) =>
       serviceSchema({ name: s.title, description: s.metaDescription, url: `/${s.slug}` })
     ),
   ];
@@ -43,7 +43,7 @@ export default function ServicesPage() {
       <section className="section">
         <div className="container-x">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {services.map((service) => (
+            {services.filter(Boolean).map((service) => (
               <ServiceCard key={service.slug} service={service} />
             ))}
           </div>

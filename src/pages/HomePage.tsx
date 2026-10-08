@@ -215,7 +215,7 @@ export default function HomePage() {
             </p>
           </div>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {services.slice(0, 6).map((service) => (
+            {services.filter(Boolean).slice(0, 6).map((service) => (
               <ServiceCard key={service.slug} service={service} />
             ))}
           </div>
@@ -453,7 +453,7 @@ export default function HomePage() {
             </p>
           </div>
           <div className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {serviceAreas.slice(0, 4).map((area) => (
+            {serviceAreas.filter(Boolean).slice(0, 4).map((area) => (
               <Link
                 key={area.slug}
                 to={`/${area.slug}`}
