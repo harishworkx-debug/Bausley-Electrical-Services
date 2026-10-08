@@ -9,11 +9,11 @@ export default function DynamicRoutePage() {
   const { slug } = useParams<{ slug: string }>();
   
   if (slug && getServiceBySlug(slug)) {
-    return <ServiceDetailPage />;
+    return <ServiceDetailPage key={`service-${slug}`} />;
   }
   
   if (slug && getAreaBySlug(slug)) {
-    return <ServiceAreaDetailPage />;
+    return <ServiceAreaDetailPage key={`area-${slug}`} />;
   }
   
   return <NotFoundPage />;
